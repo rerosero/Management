@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="ManagementUnity" transaction-type="RESOURCE_LOCAL">
+        <!-- Clases de entidades declaradas -->
+        <class>ec.edu.uce.manapayment.jpa.client.Client</class>
+        <class>ec.edu.uce.manapayment.jpa.typepays.Typepays</class>
+        <class>ec.edu.uce.manapayment.jpa.card.Card</class>
+        <class>ec.edu.uce.manapayment.jpa.card.PayCard</class>
+        <class>ec.edu.uce.manapayment.jpa.paypal.PayPal</class>
+        <class>ec.edu.uce.manapayment.jpa.paypal.Paypalpay</class>
+        <class>ec.edu.uce.manapayment.jpa.transfer.Transfer</class>
+        <class>ec.edu.uce.manapayment.jpa.transfer.Paytransfer</class>
+
+        <!-- Propiedades de configuración -->
+        <properties>
+            <!-- Configuración de Hibernate -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.use_sql_comments" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+
+            <!-- Configuración de conexión a PostgreSQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/management" />
+            <property name="jakarta.persistence.jdbc.user" value="postgres" />
+            <property name="jakarta.persistence.jdbc.password" value="postgres" />
+        </properties>
+    </persistence-unit>
+</persistence>
